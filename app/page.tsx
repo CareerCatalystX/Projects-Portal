@@ -68,13 +68,9 @@ export default function Home() {
         </IosOgShellCard>
       ) : (
         <main className="min-h-screen flex flex-col flex-grow bg-background w-full relative">
-          <div className="relative z-10">
-            <Header />
-          </div>
-          
           <div className="w-full relative z-10">
-            {/* Background Image */}
-            <div className="absolute min-h-screen inset-0 z-0">
+
+            <div className="absolute min-h-screen inset-0 -z-10">
               <Image
                 src="/bgHome.jpg"
                 alt="Background"
@@ -84,19 +80,23 @@ export default function Home() {
                 quality={90}
               />
             </div>
-            
-            {/* Hero Content */}
-            <div className="relative z-10">
-              <Hero />
-            </div>
+
           </div>
-          
+
+          <Header />
+
+
+          {/* Hero Content */}
+          <div className="relative z-10">
+            <Hero />
+          </div>
+
           <div className="relative z-10 py-12 mx-12 max-h-fit">
             <div className="bg-white-200/50 backdrop-blur-xl rounded-2xl shadow-xl shadow-white-300/30 border border-white/20 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-2xl"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-2xl animate-pulse"></div>
-              
-              <div className="relative z-10 py-12 px-24">
+
+              <div className="relative z-10 py-6 md:py-12 px-6 md:px-12 lg:px-24">
                 <Eight />
               </div>
             </div>

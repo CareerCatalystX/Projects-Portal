@@ -10,7 +10,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <header className="sticky top-0 backdrop-blur-lg bg-white/60 border-b border-blue-100 shadow-[10px_0_15px_rgba(37,99,235,0.6),20px_0_20px_rgba(128,0,128,0.5),30px_0_25px_rgba(37,99,235,0.4)] w-full z-50">
+    <header className="sticky top-0 backdrop-blur-lg bg-white/60 border-b border-purple-100 shadow-[10px_0_15px_rgba(37,99,235,0.6),20px_0_20px_rgba(128,0,128,0.5),30px_0_25px_rgba(37,99,235,0.4)] w-full z-50">
       <div className="flex h-16 items-center justify-between w-full px-6">
         {/* Logo or Title */}
         <div className="flex items-center justify-between w-full">
@@ -21,12 +21,12 @@ export default function Header() {
 
             {/* Desktop Navigation (Visible only on MD+) */}
             <nav className="hidden md:flex md:flex-row gap-4">
-              {["Home", "Features", "Pricing", "About", "Contact Us"].map(
+              {["Features", "Pricing", "About", "Contact Us"].map(
                 (item) => (
                   <p
                     key={item}
                     className="hover:cursor-pointer font-light px-2 py-1 bg-gradient-to-r from-purple-900 via-purple-600 to-purple-900 bg-clip-text text-transparent"
-                    onClick={() => router.push(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
+                    onClick={() => router.push(`/${item.toLowerCase()}`)}
                   >
                     {item}
                   </p>
@@ -47,29 +47,49 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full transition-all duration-200 w-4 h-16 flex items-center justify-center"
+                className="rounded-full transition-all duration-200 w-4 h-16 flex items-center justify-center bg-transparent hover:bg-transparent"
                 aria-label="Open Menu"
               >
-                <Menu className="text-blue-700" style={{ width: "24px", height: "24px" }} />
+                <Menu className="text-purple-700" style={{ width: "24px", height: "24px" }} />
               </Button>
 
             </SheetTrigger>
             <SheetContent side="right" className="w-[250px] shadow-md bg-white">
               <SheetHeader>
-                <SheetTitle className="text-blue-700">Navigation</SheetTitle>
+                <SheetTitle className="text-purple-700">Navigation</SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col gap-4 p-4 items-center">
-                {["Home", "Features", "Pricing", "About", "Contact Us"].map(
-                  (item) => (
-                    <p
-                      key={item}
-                      className="hover:underline hover:cursor-pointer font-light px-2 py-1 text-black"
-                      onClick={() => router.push(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
-                    >
-                      {item}
-                    </p>
-                  )
-                )}
+              <div className="flex flex-col gap-4 py-4 items-center justify-between h-full">
+                <div className="flex flex-col gap-4 items-center">
+                  {["Features", "Pricing", "About", "Contact Us"].map(
+                    (item) => (
+                      <Button
+                        variant="ghost"
+                        key={item}
+                        className="hover:underline hover:cursor-pointer font-light px-2 py-1 text-black hover:bg-white"
+                        onClick={() => router.push(`/${item.toLowerCase()}`)}
+                      >
+                        {item}
+                      </Button>
+                    )
+                  )}
+                </div>
+
+                <div className="flex gap-8 items-center">
+                  <Button
+                    variant="ghost"
+                    className="bg-gradient-to-r font-light from-purple-950 via-purple-700 to-purple-950 bg-clip-text text-transparent hover:text-transparent"
+                    onClick={() => router.push("/student/login")}
+                  >
+                    Log in
+                  </Button>
+                  <Button
+                    variant="default"
+                    className="bg-gradient-to-r font-light from-purple-700 via-purple-500 to-purple-700 hover:bg-gradient-to-r hover:from-purple-500 hover:via-purple-700 hover:to-purple-500"
+                    onClick={() => router.push("/student/signup")}
+                  >
+                    Sign up
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>

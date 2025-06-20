@@ -180,25 +180,25 @@ function LogoCarousel({ columnCount = 2 }: { columnCount?: number }) {
 
 function IITJAMMULOGO(props: SVGProps<SVGSVGElement>) {
   return (
-    <Image src={"/IITJAMMU.png"} alt="IIT JAMMU LOGO" width={78} height={78} />
+    <Image src={"/IITJAMMU.png"} alt="IIT JAMMU LOGO" width={78} height={78} className="w-14 h-14 lg:w-[78px] lg:h-[78px]" />
   )
 }
 
 function AIIMSJAMMULOGO(props: SVGProps<SVGSVGElement>) {
   return (
-    <Image src={"/AIIMSJAMMU.png"} alt="AIIMS JAMMU LOGO" width={78} height={78} />
+    <Image src={"/AIIMSJAMMU.png"} alt="AIIMS JAMMU LOGO" width={78} height={78} className="w-14 h-14 lg:w-[78px] lg:h-[78px]" />
   )
 }
 
 function UNIJAMMULOGO(props: SVGProps<SVGSVGElement>) {
   return (
-    <Image src={"/UNIJAMMU.png"} alt="UNIVERSITY OF JAMMU LOGO" width={78} height={78} />
+    <Image src={"/UNIJAMMU.png"} alt="UNIVERSITY OF JAMMU LOGO" width={78} height={78} className="w-14 h-14 lg:w-[78px] lg:h-[78px]" />
   )
 }
 
 function MIETJAMMULOGO(props: SVGProps<SVGSVGElement>) {
   return (
-    <Image src={"/MIETJAMMU.png"} alt="METRO COLLEGE OF JAMMU LOGO" width={78} height={78} />
+    <Image src={"/MIETJAMMU.png"} alt="METRO COLLEGE OF JAMMU LOGO" width={78} height={78} className="w-full h-14 lg:w-[100px] lg:h-[64px]" />
   )
 }
 
