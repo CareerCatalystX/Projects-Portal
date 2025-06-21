@@ -16,7 +16,7 @@ export default function Hero() {
     return (
         <div className="h-[500px] text-center flex flex-col items-center gap-6 justify-center z-10">
             <div className="flex flex-col justify-center items-center">
-                <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="flex flex-wrap items-center justify-center gap-2 px-4">
                     {words.map((word, wordIndex) => (
                         <div key={wordIndex} className="flex items-center">
                             {word.map((character, charIndex) => (

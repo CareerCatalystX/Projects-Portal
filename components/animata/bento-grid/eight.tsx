@@ -104,8 +104,8 @@ function FeatureOne() {
 
 function FeatureThree() {
     return (
-        <BentoCard className="relative flex flex-col overflow-visible bg-purple-300 shadow-lg shadow-purple-200 sm:col-span-2">
-            <BoldCopy text="CARREER" className="bg-transparent" textClassName="text-zinc-800" />
+        <BentoCard className="relative flex flex-col items-center justify-center overflow-visible bg-purple-300 shadow-lg shadow-purple-200 sm:col-span-2">
+            <BoldCopy text="CAREER" className="bg-transparent" textClassName="text-zinc-800" />
         </BentoCard>
     );
 }
@@ -127,13 +127,27 @@ function FeatureTwo() {
 }
 
 function FeatureFour() {
+    const [columnCount, setColumnCount] = useState(2)
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 1024px)') // Tailwind 'lg'
+        const handleResize = () => setColumnCount(mediaQuery.matches ? 2 : 1)
+
+        handleResize() // Set initial value
+        mediaQuery.addEventListener('change', handleResize)
+
+        return () => {
+        mediaQuery.removeEventListener('change', handleResize)
+        }
+    }, [])
+
     return (
         <BentoCard className="flex items-center justify-between bg-lime-300 shadow-lg shadow-lime-200 sm:col-span-2 md:flex-row-reverse">
             <p>
                 <Counter targetValue={50} format={(v) => +Math.ceil(v) + "k+ students"} className="text-lime-600" />
             </p>
             <div className="relative max-h-32 flex-shrink-0 overflow-hidden">
-                <LogoCarousel />
+                <LogoCarousel columnCount={columnCount} />
             </div>
         </BentoCard>
     );
