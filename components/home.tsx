@@ -4,13 +4,14 @@ import { TextGif } from "./ui/text-gif";
 
 
 export default function Hero() {
-    const gifUrl = "https://media.giphy.com/media/9Pmfazv34l7aNIKK05/giphy.gif"
+    const gifUrl = "/gif.gif"
+    //One Platform. Infinite Opportunities.
     const words = [
-        ["F", "r", "o", "m"],
-        ["C", "l", "a", "s", "s", "r", "o", "o", "m", "s"],
-        ["t", "o"],
-        ["C", "u", "t", "t", "i", "n", "g", "-", "E", "d", "g", "e"],
-        ["P", "r", "o", "j", "e", "c", "t", "s"]
+        ["O", "n", "e"],
+        ["P", "l", "a", "t", "f", "o", "r", "m"],
+        ["-"],
+        ["I", "n", "f", "i", "n", "i", "t", "e"],
+        ["O", "p", "p", "o", "r", "t", "u", "n", "i", "t", "i", "e", "s"]
     ];
 
     return (
@@ -30,7 +31,7 @@ export default function Hero() {
                         </div>
                     ))}
                 </div>
-                <p className="text-blue-900 pt-6">Find and apply for professor-led projects across top colleges in India. Gain real-world experience, collaborate with peers, and supercharge your portfolio.</p>
+                <p className="text-blue-900 pt-6">Projects. Resumes. Internships. From first exposure to final placement, CareerCatalystX powers your journey.</p>
             </div>
             <GetStartedButton text="Ignite Your Journey" />
         </div>

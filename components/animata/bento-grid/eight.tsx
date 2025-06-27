@@ -90,8 +90,8 @@ function FeatureOne() {
     }, []);
 
     return (
-        <BentoCard className="flex flex-col bg-yellow-300 shadow-lg shadow-yellow-200">
-            <div className="font-bold text-yellow-700">Highly rated</div>
+        <BentoCard className="relative flex flex-col justify-center overflow-visible bg-yellow-300 shadow-lg shadow-yellow-200 sm:col-span-2">
+            <div className="font-bold text-yellow-700 flex text-xl">Highly rated</div>
             <div className="mt-auto flex justify-end">
                 <div className="text-4xl w-full font-black text-black/60 md:text-6xl">
                     <Ticker value={rating.toFixed(1)} className="text-end" />
@@ -110,21 +110,21 @@ function FeatureThree() {
     );
 }
 
-function FeatureTwo() {
-    return (
-        <BentoCard className="flex flex-col gap-2 bg-rose-300 shadow-lg shadow-rose-200">
-            <div className="w-full -rotate-1 rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white md:-rotate-3">
-                Small Steps
-            </div>
-           <div className="w-full rotate-1 rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white md:rotate-3">
-               can make
-           </div>
-           <div className="w-full rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white">
-                Great Changes
-            </div>
-        </BentoCard>
-    );
-}
+// function FeatureTwo() {
+//     return (
+//         <BentoCard className="flex flex-col gap-2 bg-rose-300 shadow-lg shadow-rose-200">
+//             <div className="w-full -rotate-1 rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white md:-rotate-3">
+//                 Small Steps
+//             </div>
+//            <div className="w-full rotate-1 rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white md:rotate-3">
+//                can make
+//            </div>
+//            <div className="w-full rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white">
+//                 Great Changes
+//             </div>
+//         </BentoCard>
+//     );
+// }
 
 function FeatureFour() {
     const [columnCount, setColumnCount] = useState(2)
@@ -221,7 +221,7 @@ export default function Eight() {
         <div className="storybook-fix w-full mx-auto">
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-4 sm:grid-rows-2">
                 <FeatureOne />
-                <FeatureTwo />
+                {/* <FeatureTwo /> */}
                 <FeatureThree />
                 <FeatureFour />
                 <FeatureFive />
